@@ -115,7 +115,7 @@ st.subheader(f"This assumes a growth rate of {company_growth_rate-1} per year")
 
 # Create Table with len(future_examination_len) and columns sorted by liquidity: real money, value selleable vested shares, non-sellable vested shares, unvested shared, execution cost, money from taxes
 output_table = pd.DataFrame()
-for yr in range(1, future_examination_len+1):
+for yr in range(1, int(future_examination_len+1)):
     dilution_amount = (1-yearly_dilution)**(yr)
     new_equity_valuation = (share_value/vesting_length)*dilution_amount*(company_growth_rate**(yr))
 
