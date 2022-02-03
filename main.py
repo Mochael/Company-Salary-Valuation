@@ -18,7 +18,7 @@ federal_income_tax_brackets = pd.DataFrame(
 
 base_salary = st.number_input(
      "What is the base salary per year?",
-     min_value=0, max_value=MAX_INT, value=180000)
+     min_value=0, max_value=MAX_INT, value=150000)
     
 annual_bonus = st.number_input(
      "What is the annual bonus?",
@@ -26,7 +26,7 @@ annual_bonus = st.number_input(
 
 signing_bonus = st.number_input(
      "What is the signing bonus?",
-     min_value=0, max_value=MAX_INT, value=45000)
+     min_value=0, max_value=MAX_INT, value=50000)
 
 company_public_state = st.radio(
      "Is the company public or private?",
@@ -47,10 +47,10 @@ if company_public_state=="Private":
 
     strike_price = st.number_input(
      "What is the strike price of your options?",
-     min_value=0, max_value=MAX_INT, value=4)
+     min_value=0, max_value=MAX_INT, value=5)
     preferred_price = st.number_input(
      "What is the preferred price of your options?",
-     min_value=0, max_value=MAX_INT, value=14)
+     min_value=0, max_value=MAX_INT, value=15)
 
     # Someone on blind says 20% dilution each funding round, we will assume a new round of funding to increase valuation each year
     yearly_dilution = st.number_input(
@@ -64,7 +64,7 @@ else:
 
     share_value = st.number_input(
      "What is the total value of shares you will receive over the vesting period?",
-     min_value=0, max_value=MAX_INT, value=280000)
+     min_value=0, max_value=MAX_INT, value=300000)
 
 vesting_length = st.number_input(
      "How long is the vesting period for all of these shares (in years)?",
@@ -72,7 +72,7 @@ vesting_length = st.number_input(
 
 current_valuation = st.number_input(
      "What is the current valuation of the company?",
-     min_value=0, max_value=MAX_INT, value=30000000000)
+     min_value=0, max_value=MAX_INT, value=50000000000)
 
 # how many years in the future do you want to look at and whats your expected company price at those years
 # future_examination_len = st.number_input(
@@ -82,7 +82,7 @@ future_examination_len = vesting_length
 
 future_valuation = st.number_input(
      "What is your estimated valuation of the company right after all of your shares vest?",
-     min_value=0, max_value=MAX_INT, value=30000000000)
+     min_value=0, max_value=MAX_INT, value=50000000000)
 
 
 def calculate_tax_amount(tax_table, income):
