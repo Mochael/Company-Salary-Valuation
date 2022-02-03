@@ -62,16 +62,9 @@ if company_public_state=="Private":
 else:
     yearly_dilution = float(0)
 
-    share_count = st.number_input(
-     "How many shares have you been awarded?",
-     min_value=0, max_value=MAX_INT, value=25000)
-    
     share_value = st.number_input(
      "What is the total value of shares you will receive over the vesting period?",
      min_value=0, max_value=MAX_INT, value=280000)
-
-    preferred_price = share_value/share_count
-
 
 vesting_length = st.number_input(
      "How long is the vesting period for all of these shares (in years)?",
